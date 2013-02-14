@@ -7,11 +7,12 @@ namespace HIppoValidator.ACheckerAccessibilityValidationClient.Tests
 {
     public class ACheckerAccessibilityValidatorTest
     {
-        [Test, Ignore("Insert api key to run")]
+        [Test]
         public void CanValidateWebsite()
         {
             // Arrange
-            var validator = new ACheckerAccessibilityValidator("INSERT_KEY_HERE");
+            var apiKey = Environment.GetEnvironmentVariable("ApiKey");
+            var validator = new ACheckerAccessibilityValidator(apiKey);
 
             // Act
             var result = validator.Validate(new Uri("http://www.hippovalidator.com"));
