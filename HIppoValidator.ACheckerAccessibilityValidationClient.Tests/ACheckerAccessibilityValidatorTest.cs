@@ -13,6 +13,11 @@ namespace HIppoValidator.ACheckerAccessibilityValidationClient.Tests
             // Arrange
             var apiKey = Environment.GetEnvironmentVariable("ApiKey");
             Console.WriteLine("ApiKey: " + apiKey);
+            foreach (var key in Environment.GetEnvironmentVariables().Keys)
+            {
+                Console.WriteLine("Key: " + key + ", valuue: " + Environment.GetEnvironmentVariable(key));
+            }
+
             var validator = new ACheckerAccessibilityValidator("a24ff92797f43c977d75eabccbdb300cb54b1d53");
 
             // Act
