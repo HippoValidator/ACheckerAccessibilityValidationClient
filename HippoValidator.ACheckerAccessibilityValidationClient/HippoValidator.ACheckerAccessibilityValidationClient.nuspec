@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>HippoValidator</authors>
+    <owners />
+    <dependencies />
+    <id>HippoValidator.ACheckerAccessibilityValidationClient</id>
+    <title>HippoValidator.ACheckerAccessibilityValidationClient</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A c# client for the AChecker accessibility validator.</description>
+    <projectUrl>https://github.com/HippoValidator/ACheckerAccessibilityValidationClient</projectUrl>
+  </metadata>
+  <files>
+    <file src="bin\$Configuration$\HippoValidator.ACheckerAccessibilityValidationClient.dll" target="lib\net40\HippoValidator.ACheckerAccessibilityValidationClient.dll" />
+    <file src="bin\$Configuration$\HippoValidator.ACheckerAccessibilityValidationClient.pdb" target="lib\net40\HippoValidator.ACheckerAccessibilityValidationClient.pdb" />
+  </files>
+</package>
