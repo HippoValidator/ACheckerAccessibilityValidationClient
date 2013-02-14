@@ -18,7 +18,7 @@ namespace HIppoValidator.ACheckerAccessibilityValidationClient.Tests
                 Console.WriteLine("Key: " + key + ", valuue: " + Environment.GetEnvironmentVariable(key.ToString()));
             }
 
-            var validator = new ACheckerAccessibilityValidator("a24ff92797f43c977d75eabccbdb300cb54b1d53");
+            var validator = new ACheckerAccessibilityValidator(apiKey);
 
             // Act
             var result = validator.Validate(new Uri("http://www.hippovalidator.com"));
