@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A c# client for the AChecker accessibility validator.</description>
     <projectUrl>https://github.com/HippoValidator/ACheckerAccessibilityValidationClient</projectUrl>
+    <tags>achecker accessibility validator wcag</tags>
   </metadata>
   <files>
     <file src="bin\$Configuration$\HippoValidator.ACheckerAccessibilityValidationClient.dll" target="lib\net40\HippoValidator.ACheckerAccessibilityValidationClient.dll" />
