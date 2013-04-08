@@ -7,24 +7,32 @@ namespace HIppoValidator.ACheckerAccessibilityValidationClient.Tests
 {
     public class ACheckerAccessibilityValidatorTest
     {
-        [Test]
+        [Test, Ignore("Needs a real key to run")]
         public void CanValidateWebsite()
         {
             // Arrange
-            var apiKey = Environment.GetEnvironmentVariable("ApiKey");
-            Console.WriteLine("ApiKey: " + apiKey);
-            foreach (var key in Environment.GetEnvironmentVariables().Keys)
-            {
-                Console.WriteLine("Key: " + key + ", valuue: " + Environment.GetEnvironmentVariable(key.ToString()));
-            }
-
-            var validator = new ACheckerAccessibilityValidator(apiKey);
+            var validator = new ACheckerAccessibilityValidator("<insert your key here>");
 
             // Act
             var result = validator.Validate(new Uri("http://www.hippovalidator.com"));
 
             // Assert
+            Assert.That(result.Status, Is.EqualTo(ValidationStatus.Success));
             Assert.That(result.Errors.Any());
+        }
+
+        [Test]
+        public void CanReturnErrorOnInvalidKey()
+        {
+            // Arrange
+            var validator = new ACheckerAccessibilityValidator("Invalid");
+
+            // Act
+            var result = validator.Validate(new Uri("http://www.hippovalidator.com"));
+
+            // Assert
+            Assert.That(result.Status, Is.EqualTo(ValidationStatus.InvalidKey));
+            Assert.That(!result.Errors.Any());
         }
     }
 }
